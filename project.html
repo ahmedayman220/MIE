@@ -40,69 +40,83 @@
       button:hover {
         background-color: #0056b3;
       }
+
+      .main {
+        width: 50%;
+      }
     </style>
-        <script>
-            document.documentElement.className = "js";
+    <script>
+      document.documentElement.className = "js";
 
-            var supportsCssVars = function () {
-              var e,
-                t = document.createElement("style");
-              return (
-                (t.innerHTML = "root: { --tmp-var: bold; }"),
-                document.head.appendChild(t),
-                (e = !!(
-                  window.CSS &&
-                  window.CSS.supports &&
-                  window.CSS.supports("font-weight", "var(--tmp-var)")
-                )),
-                t.parentNode.removeChild(t),
-                e
-              );
-            };
-            supportsCssVars() || alert("");
+      var supportsCssVars = function () {
+        var e,
+          t = document.createElement("style");
+        return (
+          (t.innerHTML = "root: { --tmp-var: bold; }"),
+          document.head.appendChild(t),
+          (e = !!(
+            window.CSS &&
+            window.CSS.supports &&
+            window.CSS.supports("font-weight", "var(--tmp-var)")
+          )),
+          t.parentNode.removeChild(t),
+          e
+        );
+      };
+      supportsCssVars() || alert("");
 
-            function submitForm() {
-              var form = document.getElementById("ajax-form");
-              var formData = new FormData(form);
-              var xhr = new XMLHttpRequest();
-              xhr.open("POST", form.action, true);
-              xhr.onload = function () {
-                if (xhr.status === 200) {
-                  console.log(xhr.responseText);
-                }
-              };
-              xhr.send(formData);
-            }
-          </script>
+      function submitForm() {
+        var form = document.getElementById("ajax-form");
+        var formData = new FormData(form);
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", form.action, true);
+        xhr.onload = function () {
+          if (xhr.status === 200) {
+            console.log(xhr.responseText);
+          }
+        };
+        xhr.send(formData);
+      }
+    </script>
   </head>
   <body>
-    <form
-    onsubmit="event.preventDefault(); submitForm();"
-      action="http://127.0.0.1:8000/project-form/"
-      name="ajax-form"
-      id="ajax-form"
-      method="post"
-      enctype="multipart/form-data"
-    >
-      <input type="text" name="name" id="name" placeholder="Name" />
-      <textarea
-        type="text"
-        name="description"
-        id="description"
-        placeholder="Description"
+    <!-- form title "Project form" -->
+    <div class="main">
+      <h1>Project form</h1>
+      <form
+        onsubmit="event.preventDefault(); submitForm();"
+        action="http://127.0.0.1:8000/project-form/"
+        name="ajax-form"
+        id="ajax-form"
+        method="post"
+        enctype="multipart/form-data"
       >
-      </textarea>
-      <input type="file" name="image" id="image" placeholder="Image" />
-      <button type="submit">Submit</button>
-    </form>
-    
+        <label for="name">Project name:</label>
+        <input type="text" name="name" id="name" placeholder="Name" />
+        
+        <label for="description">Project description:</label>
+        <textarea
+          type="text"
+          name="description"
+          id="description"
+          placeholder="Description"
+        >
+        </textarea>
+        
+        <label for="image">Project image:</label>
+        <input type="file" name="image" id="image" placeholder="Image" />
+        
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
     <!-- JAVASCRIPT
 ================================================== -->
-<script src="js/jquery.min.js" defer></script>
-<script src="js/popper.min.js" defer></script>
-<script src="js/bootstrap.min.js" defer></script>
-<script src="js/contact.js" defer></script>
-<!-- End Document
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/popper.min.js" defer></script>
+    <script src="js/bootstrap.min.js" defer></script>
+    <script src="js/contact.js" defer></script>
+    <!-- End Document
 ================================================== -->
   </body>
 </html>
