@@ -1,0 +1,48 @@
+All website responsive (Ayman)
+
+Home: (Ayman)
+	Background +
+	Blobs colors scheme 
+	social: 
+		- LinkedIn
+		- Facebook
+		- Instagram
+
+	Logo image (not short name)
+
+About us: (Ayman)
+	More media:
+		-images
+		-icons
+		-logos
+
+Competition: (Ayman)
+	phases
+	roadmap from proposal
+
+
+Projects: +
+	change title to insights +
+Insights: +
+	change to projects +
+
+Insights:  (ME)
+	Counter in proposal
+	Set (made in Egypt 23)
+	
+	shaping the future -> Parteners and sponsers:
+		Sponsers	
+		Partners
+
+
+Heart shape button: (ME)
+	change to defining registration form
+
+
+project.html Project form: (ME)
+	🫠
+	Background
+	Styles
+
+Footer: (Ayman)
+	-...
